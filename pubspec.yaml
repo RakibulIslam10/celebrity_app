@@ -1,0 +1,115 @@
+name: celebrity
+description: celebrity links app 
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+  # manually added dependency
+  # rename_app: ^1.6.2
+  provider: ^6.1.2
+  google_fonts: ^6.2.1
+  pin_code_fields: ^8.0.1
+  carousel_slider: ^5.0.0
+  flutter_svg: ^2.0.17
+
+  image_picker:
+
+  video_player: ^2.9.2
+  flutter_screenutil: ^5.9.3
+#  flutter_svg:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+  # flutter_launcher_icons: ^0.11.0
+  # flutter_app_name: ^0.1.0
+  # change_app_package_name: ^1.1.0
+#  build_runner:
+#  flutter_gen_runner:
+#
+#
+
+#
+flutter_icons:
+ android: "launcher_icon"
+ ios: false
+ image_path: "assets/logo/logo.png"
+
+flutter_gen:
+  output: lib/custom_assets/ # Optional (default: lib/gen/)
+  line_length: 80 # Optional (default: 80)
+
+
+
+
+flutter:
+
+
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/clip_path/
+    - assets/clip_path/banner_home.png
+    - assets/clip_path/card1.png
+    - assets/clip_path/card2.png
+    - assets/clip_path/card3.png
+    - assets/clip_path/card4.png
+    - assets/clip_path/personal_meet.png
+    - assets/clip_path/video_call.png
+    - assets/clip_path/videos_bites.png
+    - assets/icons/
+    - assets/icons/co.png
+    - assets/icons/congratulationImg.png
+    - assets/icons/google.png
+    - assets/icons/notification.svg
+    - assets/icons/paypal.png
+    - assets/icons/right.png
+    - assets/images/
+    - assets/images/Subtract.png
+    - assets/images/allu.png
+    - assets/images/bgg.png
+    - assets/images/call.png
+    - assets/images/callingImg.png
+    - assets/images/fancard.png
+    - assets/images/fancard1.png
+    - assets/images/fancard2.png
+    - assets/images/grid.png
+    - assets/images/imageMan.png
+    - assets/images/karthikeya.png
+    - assets/images/kriti.png
+    - assets/images/mansimg.png
+    - assets/images/onBg.png
+    - assets/images/onboarMans.png
+    - assets/images/onboard.png
+    - assets/images/payment_success.png
+    - assets/images/personal_meet1.png
+    - assets/images/personal_meet2.png
+    - assets/images/profile.png
+    - assets/images/rama.png
+    - assets/images/samantha.png
+    - assets/images/singers.png
+    - assets/images/soon.png
+    - assets/images/thank.png
+    - assets/images/thankYou.png
+    - assets/logo/
+    - assets/logo/pp.png
