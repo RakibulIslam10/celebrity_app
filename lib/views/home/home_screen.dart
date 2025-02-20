@@ -3,7 +3,6 @@ import 'package:celebrity/core/utils/assets.dart';
 import 'package:celebrity/core/utils/dimensions.dart';
 import 'package:celebrity/core/utils/sized.dart';
 import 'package:celebrity/core/utils/strings.dart';
-import 'package:celebrity/res/assets_res.dart';
 import 'package:flutter/material.dart';
 import '../../core/utils/text_style.dart';
 

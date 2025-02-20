@@ -16,9 +16,8 @@ class VideoBitesScreen extends StatefulWidget {
 }
 
 class _VideoBitesScreenState extends State<VideoBitesScreen> {
-  int selectedTabIndex = 0; // Track which TabBar category is selected
-  int selectedProfileIndex =
-      0; // Track which ProfileCategoryList item is selected
+  int selectedTabIndex = 0;
+  int selectedProfileIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -26,38 +25,33 @@ class _VideoBitesScreenState extends State<VideoBitesScreen> {
       length: 5,
       child: Scaffold(
         appBar: const PrimaryAppBar("Video Bites"),
-        body: Column(
-          children: [
-            _searchWidget(context),
-            _tabBarWidget(),
-            Expanded(
-              child: Column(
-                children: [
-                  verticalSpace(Dimensions.heightSize * 1.5),
-                  Expanded(
-                    flex: 2, // Adjust for size
-                    child: TabBarView(
-                      children: List.generate(5, (tabIndex) {
-                        return ProfileCategoryList(
-                          onCategorySelected: (profileIndex) {
-                            setState(() {
-                              selectedTabIndex = tabIndex;
-                              selectedProfileIndex = profileIndex;
-                            });
-                          },
-                        );
-                      }),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 3, // Bottom widget area
-                    child: _getBottomWidget(
-                        selectedTabIndex, selectedProfileIndex),
-                  ),
-                ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              _searchWidget(context),
+              _tabBarWidget(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.1,
+                child: TabBarView(
+                  children: List.generate(5, (tabIndex) {
+                    return ProfileCategoryList(
+                      onCategorySelected: (profileIndex) {
+                        setState(() {
+                          selectedTabIndex = tabIndex;
+                          selectedProfileIndex = profileIndex;
+                        });
+                      },
+                    );
+                  }),
+                ),
               ),
-            ),
-          ],
+              SizedBox(
+                height: MediaQuery.of(context).size.height,
+                child: _getBottomWidget(
+                    selectedTabIndex, selectedProfileIndex),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -65,6 +59,7 @@ class _VideoBitesScreenState extends State<VideoBitesScreen> {
 
   _tabBarWidget() {
     return Container(
+      margin: EdgeInsets.symmetric(vertical: Dimensions.verticalSpacingLarge * 0.5),
       padding: EdgeInsets.symmetric(horizontal: Dimensions.paddingSmall),
       child: TabBar(
         indicatorColor: AppColors.backgroundColor,
@@ -86,7 +81,7 @@ class _VideoBitesScreenState extends State<VideoBitesScreen> {
     );
   }
 
-  Widget _tabItem(String title, bool isSelected) {
+   _tabItem(String title, bool isSelected) {
     return Container(
       padding: EdgeInsets.symmetric(
           vertical: Dimensions.paddingSmall * 0.6, horizontal: 13),
@@ -116,7 +111,6 @@ class _VideoBitesScreenState extends State<VideoBitesScreen> {
   }
 }
 
-// Dynamically change bottom widget based on Tab and Profile selection
 Widget _getBottomWidget(int tabIndex, int profileIndex) {
   Map<int, List<String>> tabProfiles = {
     0: [
